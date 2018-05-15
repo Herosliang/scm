@@ -3,9 +3,16 @@
 
 <suite name = "Suite1">
 
-    <test name = "method">
+    <test name = "test1">
         <classes>
-            <class name = "utillty.Testng" />
+            <class name = "utillty.Testng">
+                <methods>
+                    <include name="method1">
+                        <parameter name="test" value="admin">
+                        </parameter>
+                    </include>
+                </methods>
+            </class>
         </classes>
     </test>
 
@@ -13,7 +20,7 @@
         <classes>
             <class name="utillty.Testng">
                 <methods>
-                    <include name="method1"></include>
+                    <!--<include name="method1"></include>-->
                     <include name="method2"></include>
                 </methods>
             </class>
@@ -21,5 +28,8 @@
     </test>
     <listeners>
         <listener class-name="utillty.Oitestlistener"></listener>
+        <listener class-name="utillty.Oreport"></listener>
+        <!--<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>-->
     </listeners>
 </suite>
